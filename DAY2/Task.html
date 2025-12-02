@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert World 🍰</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background-color: #fff7f8;
+        }
+
+        header{
+            background-color: #ff6f91;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        .btn{
+            background-color:#ff3d6e;
+            color:white;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:5px;
+            font-weight:bold;
+        }
+
+        .page{
+            display:none;
+        }
+
+        /* Show home by default */
+        #home:target ~ #homePage,
+        body:not(:target) #homePage{
+            display:block;
+        }
+
+        #dashboard:target ~ #dashboardPage{
+            display:block;
+        }
+
+        .form-box{
+            background:white;
+            width:350px;
+            margin:40px auto;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0px 0px 12px rgba(0,0,0,0.2);
+        }
+
+        input, select{
+            width:100%;
+            padding:10px;
+            margin-bottom:12px;
+            border-radius:5px;
+            border:1px solid #aaa;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:#ff6f91;
+            color:white;
+            border:none;
+            font-size:16px;
+            border-radius:5px;
+        }
+
+        button:hover{
+            background:#ff4d75;
+        }
+
+        /* Dashboard */
+        .grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap:20px;
+            padding:20px;
+        }
+
+        .box{
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        .box img{
+            width:100%;
+            border-radius:10px;
+            height:160px;
+            object-fit:cover;
+        }
+
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="home"></div>
+<div id="dashboard"></div>
+
+
+<div id="homePage" class="page">
+    <header>
+        <h1>Welcome to Dessert World 🍰</h1>
+    </header>
+
+    <div class="form-box">
+        <h2>Login 🍨</h2>
+        <form onsubmit="goDashboard(event)">
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" required>
+
+            <label>Select Role</label>
+            <select required>
+                <option value="">Choose</option>
+                <option>Customer</option>
+                <option>Chef</option>
+                <option>Admin</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 Dessert World | All Rights Reserved</p>
+    </footer>
+</div>
+
+
+<div id="dashboardPage" class="page">
+    <header>
+        <h1>🍧 Dessert Dashboard</h1>
+        <a class="btn" href="#home">Logout</a>
+    </header>
+
+    <h2 style="text-align:center;">Popular Desserts</h2>
+
+    <div class="grid">
+
+        <div class="box">
+            <img src="https://www.melskitchencafe.com/wp-content/uploads/2023/01/updated-lava-cakes7-500x500.jpg">
+            <h3>Chocolate Lava Cake</h3>
+            <p>Melts in your mouth with warm molten chocolate.</p>
+        </div>
+
+        <div class="box">
+            <img src="https://preppykitchen.com/wp-content/uploads/2022/07/Strawberry-Cupcakes-Feature.jpg">
+            <h3>Strawberry Cupcake</h3>
+            <p>Soft vanilla sponge with berry frosting.</p>
+        </div>
+
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/-3TFSG37IJc/maxresdefault.jpg">
+            <h3>Rainbow Ice Cream</h3>
+            <p>A colourful delight for your taste buds!</p>
+        </div>
+
+        <div class="box">
+            <img src="https://thecaglediaries.com/wp-content/uploads/2023/03/Banana-Pudding-Cups-Featured-Image.jpg">
+            <h3>Banana Pudding</h3>
+            <p>Creamy layers of banana, wafers, and sweetness.</p>
+        </div>
+
+        <div class="box">
+            <img src="https://www.allrecipes.com/thmb/y-S61IJkYyCUjTMGYqkaoJGwBrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-228515-simple-creme-brulee-dessert-dmfs-4x3-821623e7a86548eeb89370ac23d5f251.jpg">
+            <h3>Crème Brûlée</h3>
+            <p>Rich custard topped with crunchy caramel.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Dessert World | Dashboard</p>
+    </footer>
+</div>
+
+
+<script>
+function goDashboard(event){
+    event.preventDefault();
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("dashboardPage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
