@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+ <form>
+     <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+    <br><br>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" placeholder="Enter your email" required>
+    <br><br>
+
+    <!-- Password -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <br><br>
+
+    <!-- Age -->
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" placeholder="Enter your age" required>
+    <br><br>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male" required> 
+    <label for="male">Male</label><br>
+
+    <input type="radio" id="female" name="gender" value="female"> 
+    <label for="female">Female</label><br>
+
+    <input type="radio" id="other" name="gender" value="other"> 
+    <label for="other">Other</label>
+    <br><br>
+
+    <!-- Subjects (Checkbox) -->
+    <label>Choose Your Subjects:</label><br>
+
+    <input type="checkbox" id="maths" name="subject" value="maths">
+    <label for="maths">Maths</label><br>
+
+    <input type="checkbox" id="science" name="subject" value="science">
+    <label for="science">Science</label><br>
+
+    <input type="checkbox" id="english" name="subject" value="english">
+    <label for="english">English</label><br>
+
+    <input type="checkbox" id="computer" name="subject" value="computer">
+    <label for="computer">Computer Science</label><br><br>
+
+    <!-- Department (Dropdown) -->
+    <label for="department">Department:</label>
+    <select id="department" name="department" required>
+        <option value="">--Select Department--</option>
+        <option value="cse">Computer Science</option>
+        <option value="it">Information Technology</option>
+        <option value="ece">Electronics</option>
+        <option value="eee">Electrical</option>
+    </select>
+    <br><br>
+
+    <!-- Date -->
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" name="date" required>
+    <br><br>
+
+    <!-- Time -->
+    <label for="time">Select Time:</label>
+    <input type="time" id="time" name="time" required>
+    <br><br>
+
+    <!-- Date & Time -->
+    <label for="datetime">Select Date & Time:</label>
+    <input type="datetime-local" id="datetime" name="datetime" required>
+    <br><br>
+
+    <!-- Upload Image / Document -->
+    <label for="file">Upload Image / Document:</label>
+    <input type="file" id="file" name="file" accept="image/*,.pdf,.doc,.docx" required>
+    <br><br>
+
+    <!-- Address -->
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="4" cols="40" placeholder="Enter your full address" required></textarea>
+    <br><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Submit Form">
+    <input type="reset" value="Reset Form">
+
+</form>
+</body>
+</html>
