@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b{
+           color:white;
+           border-radius: 5px;
+           background-color: red;
+           border-style:solid;
+           border-color: red;
+           cursor: pointer;
+           width: 105px;
+           height: 36px;
+        }
+        .b:hover{
+            opacity: 0.6;
+        }
+        div{
+           margin:50px 30px 50px;
+           border:solid black 2px;
+           width: 350px;
+           height:100px;
+
+        }
+        h1{
+            position: relative;
+            top:15px;
+            left: 130px;
+        }
+        .sp{
+            position: sticky;
+            top: 0;
+            background-color: green;
+            border: 2px solid #4CAF50;
+        }
+        .one{
+           border:solid red 2px;
+           width: 70px;
+           height:70px;
+           background-color: red;
+           position: relative;
+           top:50px;
+           left:30px;
+           z-index:4;
+        }
+        .two{
+           border:solid black 2px;
+           width: 70px;
+           height:70px;
+           background-color: black;
+           position:relative;
+           top: 70px;
+           left:30px;
+           z-index: 5;
+        }
+        .three{
+           border:solid blue 2px;
+           width: 70px;
+           height:70px;
+           background-color: blue;
+        }
+        .visible{
+            width: 200px;
+            height: 100px;
+            background-color: lightpink;
+            overflow: visible;
+        }
+        .hidden{
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            overflow: hidden;
+        }
+        .scroll{
+            width: 200px;
+            height: 100px;
+            background-color: lavender;
+            overflow: scroll;
+        }
+        .container {
+            display: flex;
+            background-color: DodgerBlue;
+        }
+        .container div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 3px;
+            font-size: 30px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .photo img {
+            width: 300px;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .photo img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="b">SUBSCRIBE</button><br><hr>
+
+    <div>
+       <h1>Hello</h1>
+    </div><hr>
+     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum deleniti aliquid similique cumque voluptate non ipsam, est autem, commodi ut sunt numquam, fuga error officiis? Mollitia iste optio <span class="sp">Aids</span>atque necessitatibus odit expedita quod eligendi ipsum quo. Tempora fugiat, mollitia ea magni, ipsam sapiente sit quibusdam aliquid et maxime voluptatum maiores molestiae, doloribus iure assumenda cumque eligendi voluptate praesentium facere id qui. Veritatis praesentium, dolorum placeat animi porro ullam consectetur eligendi ipsam reprehenderit. Dicta deleniti voluptatem, assumenda ut dolorum officiis quas harum ipsum laboriosam explicabo id illo velit? Optio, minima. Vero assumenda corrupti nostrum autem ex vel, repellat corporis veniam magnam?</p><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, fugit unde! Eos cumque, perspiciatis ipsam, saepe dolorum veniam molestias eveniet hic quas explicabo laborum. Aspernatur fugiat molestiae ullam ipsam ipsa praesentium facilis delectus sit dignissimos, a ratione nam accusantium incidunt ab asperiores est expedita natus molestias, excepturi dolore, necessitatibus magnam. Recusandae quam inventore unde laboriosam facere perferendis impedit qui, tempore officia dicta? Laudantium eveniet, eaque cumque est dolore repellat ut! Natus, cupiditate consequatur alias numquam explicabo dolorem voluptas obcaecati cum fugiat sit quia asperiores, illum atque hic delectus error adipisci ullam porro minus soluta voluptate sapiente maxime. Ipsam, iste enim?</p><br><hr>
+    <h1>z-index</h1>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div><br><hr>
+    <h1>Overflow</h1>
+    <div class="visible">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eos vel voluptate eligendi nobis earum veritatis, voluptatibus placeat aliquid temporibus rerum ullam sequi est consequatur excepturi fuga!</p>
+    </div><br>
+    <div class="hidden">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eos vel voluptate eligendi nobis earum veritatis, voluptatibus placeat aliquid temporibus rerum ullam sequi est consequatur excepturi fuga! Iste cum numquam vel, modi aspernatur maxime suscipit necessitatibus tenetur libero commodi ea vero amet harum natus. Sequi deserunt ex rem pariatur at.</p>
+    </div>
+    <div class="scroll">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eos vel voluptate eligendi nobis earum veritatis, voluptatibus placeat aliquid temporibus rerum ullam sequi est consequatur excepturi fuga! Iste cum numquam vel, modi aspernatur maxime suscipit necessitatibus tenetur libero commodi ea vero amet harum natus. Sequi deserunt ex rem pariatur at.</p>
+    </div><br><hr>
+    <div class="container">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+</div><br><hr>
+
+     <div class="gallery">
+        <div class="photo">
+             <img scr="https://i.pinimg.com/736x/ec/91/36/ec91369cfdb8628976ea78a5075cc353.jpg" alt="image">
+        </div>
+        <div class="photo">
+             <img scr="https://i.pinimg.com/736x/60/b2/54/60b25472996727c76fdea1958938050b.jpg" alt="image">
+        </div>
+        <div class="photo">
+             <img scr="https://i.pinimg.com/736x/28/30/0c/28300cd32b565ccd5799eeaf331d2e97.jpg" alt="image" >
+        </div>
+        <div class="photo">
+             <img scr="https://i.pinimg.com/736x/1f/e9/09/1fe909426e3c1cb185aa583d6a0f69c9.jpg" alt="image">
+        </div>
+        <div class="photo">
+             <img scr="https://i.pinimg.com/736x/20/3f/79/203f7914c799216c36ba7534d1a01223.jpg" alt="image">
+        </div>
+        <div class="photo">
+             <img scr="https://a-z-animals.com/media/2021/05/Favorite-and-Most-Popular-Animals-header.jpg" alt="image">
+        </div>
+     </div>
+</body>
+</html>
