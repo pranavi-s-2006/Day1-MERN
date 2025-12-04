@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Manager</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+        h2{
+            color: #333;
+        }
+        .container{
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button{
+            padding: 8px 15px;
+            margin: 5px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background: #0056b3;
+        }
+        input{
+            padding: 8px;
+            margin: 5px;
+            width: 95%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #output{
+            background: #eef;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Manager</h2>
+
+    <!-- Add Student -->
+    <input id="name" placeholder="Enter Name">
+    <input id="age" placeholder="Enter Age">
+    <input id="grade" placeholder="Enter Grade (A/B/C)">
+    <button onclick="addStudent()">Add Student</button>
+
+    <!-- Search -->
+    <input id="search" placeholder="Search by Name" onkeyup="searchStudent()">
+
+    <!-- Buttons -->
+    <button onclick="showStudents()">Show All Students</button>
+    <button onclick="showDetails()">Show Details (for-in)</button>
+    <button onclick="uppercaseNames()">Uppercase Names (map)</button>
+    <button onclick="gradeAStudents()">Grade A Students (filter)</button>
+    <button onclick="countStudents()">Count Students (reduce)</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    let students = [
+        { name: "Pranavi", age: 21, grade: "A" },
+        { name: "Ragavi", age: 22, grade: "B" },
+        { name: "Priya", age: 20, grade: "A" }
+    ];
+
+    // Show all students
+    function showStudents(){
+        let text = "";
+        students.forEach(s => {
+            text += `${s.name} - Age: ${s.age} - Grade: ${s.grade}<br>`;
+        });
+        document.getElementById("output").innerHTML = text;
+    }
+
+    // Show details using for-in loop
+    function showDetails(){
+        let text = "";
+        students.forEach(student => {
+            for (let key in student) {
+                text += `${key}: ${student[key]}<br>`;
+            }
+            text += "<hr>";
+        });
+        document.getElementById("output").innerHTML = text;
+    }
+
+    // Uppercase names using map
+    function uppercaseNames(){
+        let upper = students.map(s => s.name.toUpperCase());
+        document.getElementById("output").innerHTML = upper.join("<br>");
+    }
+
+    // Filter Grade A students
+    function gradeAStudents(){
+        let gradeA = students.filter(s => s.grade === "A");
+        let text = "";
+        gradeA.forEach(s => text += `${s.name} (${s.grade})<br>`);
+        document.getElementById("output").innerHTML = text;
+    }
+
+    // Count students using reduce
+    function countStudents(){
+        let count = students.reduce(total => total + 1, 0);
+        document.getElementById("output").innerHTML = "Total Students: " + count;
+    }
+
+    // Add Student
+    function addStudent(){
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let grade = document.getElementById("grade").value.toUpperCase();
+
+        if(!name || !age || !grade){
+            alert("Please fill all fields");
+            return;
+        }
+
+        students.push({ name, age, grade });
+        alert("Student Added!");
+        showStudents();
+    }
+
+    // Search Student
+    function searchStudent(){
+        let keyword = document.getElementById("search").value.toLowerCase();
+        let results = students.filter(s => s.name.toLowerCase().includes(keyword));
+
+        let text = "";
+        results.forEach(s => text += `${s.name} - Age: ${s.age} - Grade: ${s.grade}<br>`);
+
+        document.getElementById("output").innerHTML = text;
+    }
+</script>
+
+</body>
+</html>
