@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Shop UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <!-- HEADER -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-pink-600">E-Shop</h1>
+      <input id="search" type="text" placeholder="Search products..."
+        class="border px-3 py-2 rounded w-1/2 focus:ring-2 focus:ring-pink-400" />
+      <button class="relative">
+        <span class="material-icons text-3xl">shopping_cart</span>
+        <span id="cartCount"
+          class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs px-2 py-1 rounded-full">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="max-w-6xl mx-auto mt-6">
+    <div class="relative w-full h-64 rounded-xl overflow-hidden shadow">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
+      <h2 class="absolute bottom-4 left-6 text-white text-3xl font-bold drop-shadow-xl">Shop the Latest Trends</h2>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="max-w-6xl mx-auto mt-10 px-4">
+    <h2 class="text-2xl font-semibold mb-4">Hot Picks 🔥</h2>
+
+    <div id="products" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"></div>
+  </section>
+
+  <script>
+    // SAMPLE PRODUCTS WITH GOOGLE/UNSPLASH IMAGE LINKS
+    const productData = [
+      {
+        name: "Pink Sneakers",
+        price: 1299,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXimWjeyu34FPLxGCrD1_DiyhjepZYmZ958w&s"
+      },
+      {
+        name: "Smart Watch",
+        price: 1899,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiqC-6d2zKGwkJEQj1dhyx9KzKY3_1v_bfhg&s"
+      },
+      {
+        name: "Headphones",
+        price: 999,
+        img: "https://www.leafstudios.in/cdn/shop/files/1_a43c5e0b-3a47-497d-acec-b4764259b10e_800x.png?v=1750486829"
+      },
+      {
+        name: "Women Handbag",
+        price: 1599,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBFJtmm5SZu3oJCgbi0kcZ9GOcjS7nuZxACQ&s"
+      },
+      {
+        name: "Perfume",
+        price: 799,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvTkn6wNU0izNtNj_rkP11LBbnTlrSTtg75w&s"
+      },
+      {
+        name: "Necklace",
+        price: 1199,
+        img: "https://cdn.orra.co.in/media/catalog/product/cache/10238651d5f95594b9023f998383bb67/o/s/osn19041_2_gpkemjdffhlflbgm.jpg"
+      }
+    ];
+
+    const products = document.getElementById("products");
+    const cartCount = document.getElementById("cartCount");
+    let cart = 0;
+
+    // LOAD PRODUCTS
+    function loadProducts() {
+      products.innerHTML = "";
+      productData.forEach((p) => {
+        const card = document.createElement("div");
+        card.className = "bg-white shadow rounded-xl overflow-hidden hover:scale-105 transition cursor-pointer";
+
+        card.innerHTML = `
+          <img src="${p.img}" class="w-full h-40 object-cover" />
+          <div class="p-3">
+            <h3 class="font-semibold text-lg">${p.name}</h3>
+            <p class="text-gray-600">₹${p.price}</p>
+            <button class="mt-2 bg-pink-600 text-white px-4 py-1 rounded add">Add to Cart</button>
+          </div>
+        `;
+
+        card.querySelector(".add").addEventListener("click", () => addToCart());
+        products.appendChild(card);
+      });
+    }
+
+    function addToCart() {
+      cart++;
+      cartCount.textContent = cart;
+    }
+
+    loadProducts();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myp">This is a paragarph</p>
+    <p id="demo" style="color:blueviolet">HELLO</p>
+    <p id="dem">hello</p>
+    <p id="p1">Hello</p>
+    <button onclick="changeText()">Click</button>
+    <p id="p2">Hello</p>
+    <button onclick="TextBold()">Click</button>
+
+    <script>
+        const para=document.getElementById("myp");
+        para.style.color="blue";
+        para.style.backgroundColor="aquamarine";
+        para.style.fontSize="20px";
+        para.style.fontFamily="TimesNewRoman"
+
+        document.getElementById("demo").textContent;// understand the style and print with style
+        document.getElementById("dem").innerText; //cant able to understand style and simply print the content
+
+         function changeText(){
+        document.getElementById("p1").innerText = "Text changed using innerText!";
+       }
+         function TextBold(){
+        document.getElementById("p2").innerHTML = "<b>Text changed using innerText!</b>";
+       }
+    </script>
+</body>
+</html>

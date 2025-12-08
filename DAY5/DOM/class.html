@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="text">Hello</p>
+    <p class="text">Hi</p>
+    <p class="text">Welcome</p>
+    
+    <script>
+        const para = document.getElementsByClassName("text");
+
+        for(let i = 0; i < para.length; i++){
+            para[i].style.color = "blue";
+            para[i].style.backgroundColor = "aquamarine";
+            para[i].style.fontSize = "30px";
+            para[i].style.fontFamily = "Times New Roman";
+        }
+        document.querySelector(".text");
+        document.querySelectorAll(".text");
+    </script>
+</body>
+</html>
